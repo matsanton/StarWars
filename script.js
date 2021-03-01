@@ -7,7 +7,7 @@ button.addEventListener('click', getApi);
 
 function getApi() {
    let url = 'https://www.swapi.tech/api/people/?name=';
-   let name = 'Luke Skywalker';
+   let name = input.value;
    url += name;
 
    fetch(url)
@@ -15,7 +15,7 @@ function getApi() {
       .then(data => {  
          /*Och här*/
          console.log('People data:')
-         console.log(data.result[0].properties.name) 
+         console.log(data.result[0].properties) 
       })
       .catch(err => console.log(err))
 }
